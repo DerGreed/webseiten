@@ -97,6 +97,7 @@ table {
     border-top: 1px solid; */
     border: 1px solid var(--dark);
     border-collapse: collapse;
+    margin-bottom: 10px;
 }
 
 thead th {
@@ -141,7 +142,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
     body {
-        grid-template-columns: 1fr; /* Nur noch eine Spalte! */
+        grid-template-columns: 1fr;
         grid-template-areas:
         "header"
         "main"
@@ -161,5 +162,37 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    }
+}
+
+/* Feature-Karten */
+.features-section {
+    padding: 10px 20px;
+    margin: 30px 30px;
+    background-color: var(--button);
+}
+.card {
+    background-color: var(--light);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.featured {
+    border: 4px solid var(--hover);
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
     }
 }
