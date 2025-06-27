@@ -101,7 +101,7 @@ table {
 
 thead th {
     padding: 10px;
-    font-size: large;
+    /* font-size: large; */
     text-align: center;
 }
 tbody th {
@@ -113,6 +113,9 @@ td, th {
 }
 td:nth-child(3) {
     font-size: 80%;
+}
+tbody tr:nth-child(odd) {
+    background-color: var(--button);
 }
 
 address {
@@ -134,4 +137,29 @@ footer, footer a {
 
 footer a:hover {
     color: var(--button);
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr; /* Nur noch eine Spalte! */
+        grid-template-areas:
+        "header"
+        "main"
+        "aside"
+        "footer";
+        font-size: 70%;
+    }
+    
+    #logo {width: 130px;}
+    
+    .nav-item{
+        padding: 0px 5px;
+    }
+}
+@media (max-width: 334px) {
+    .main-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    }
 }
