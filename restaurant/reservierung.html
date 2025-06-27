@@ -24,6 +24,98 @@
     </header>
     <main>
         <h1>Reservierung</h1>
+        <p>Bitte fülle das Formular sorgfältig aus. Wir freuen uns auf deinen Besuch!</p>
+
+        <form action="reservierung-senden.php" method="post">
+            <fieldset>
+                <legend>Ihre Kontaktdaten</legend>
+                <div class="form-group">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" required />
+                </div>
+                <div class="form-group">
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" id="nachname" name="nachname" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email"  required placeholder="name@example.com"/>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon:</label>
+                    <input type="tel" id="telefon" name="telefon" required placeholder="0123 456 789"/>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Reservierungsdetails</legend>
+                <div class="form-group">
+                    <label for="datum">Datum:</label>
+                    <input type="date" id="datum" name="datum" min="heute" required />
+                </div>
+                <div class="form-group">
+                    <label for="uhrzeit">Uhrzeit:</label>
+                    <select id="uhrzeit" name="uhrzeit" required>
+                        <option value="">– bitte wählen –</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30">19:30</option>
+                        <option value="20:00">20:00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="personen">Anzahl der Personen:</label>
+                    <input type="number" id="personen" name="personen" min="1" max="12" required />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Anlass</legend>
+                <div class="form-group-inline">
+                    <label><input type="radio" name="anlass" value="Gemütlich" required> Gemütlich</label>
+                    <label><input type="radio" name="anlass" value="Business"> Business</label>
+                    <label><input type="radio" name="anlass" value="Feier"> Feier</label>
+                    <label><input type="radio" name="anlass" value="Romantisch"> Romantisch</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Besondere Wünsche</legend>
+                <div class="form-group-inline">
+                    <label><input type="checkbox" name="wunsch[]" value="fenster"> Fensterplatz</label>
+                    <label><input type="checkbox" name="wunsch[]" value="ruhig"> Ruhig</label>
+                    <label><input type="checkbox" name="wunsch[]" value="rollstuhl"> Rollstuhlgerecht</label>
+                    <label><input type="checkbox" name="wunsch[]" value="kinderstuhl"> Kinderstuhl</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Weitere Informationen</legend>
+                <div class="form-group">
+                    <label for="allergien">Allergien/Unverträglichkeiten:</label><br>
+                    <textarea id="allergien" name="allergien" rows="2", cols="30", placeholder="Gluten, Fisch, Milch, Schalenfrüchte, ..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="nachricht">Weitere Wünsche:</label><br>
+                    <textarea id="nachricht" name="nachricht" rows="4", cols=30 placeholder="Kerzen oder Blumen auf dem Tisch, Geburtstagslied singen, etc."></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Zustimmung</legend>
+                <div class="form-group-inline">
+                    <label><input type="checkbox" name="agb" required> Ich akzeptiere die AGB.</label>
+                    <label><input type="checkbox" name="newsletter"> Newsletter abonnieren für Events und Neuigkeiten.</label>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit">Reservierung absenden</button>
+            </div>
+        </form>
     </main>
     <footer>
         <p>&copy; Chutyas Design | <a href="kontakt.html">Kontakt</a></p>
